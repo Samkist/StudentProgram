@@ -38,4 +38,8 @@ public class Undergraduate extends Student implements Majorable {
     public Grade getLevel() {
         return level;
     }
+
+    public boolean equals(Undergraduate ug) {
+        return ug.getLevel() == getLevel() && ug.getMajor().equalsIgnoreCase(getMajor());
+    }
 }

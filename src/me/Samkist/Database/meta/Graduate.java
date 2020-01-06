@@ -26,4 +26,8 @@ public class Graduate extends Student implements Majorable {
         return "Name: " + getName() + "\n"
                 + "Major: " + getMajor();
     }
+
+    public boolean equals(Graduate g) {
+        return getMajor().equalsIgnoreCase(g.getMajor());
+    }
 }

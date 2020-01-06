@@ -23,6 +23,7 @@ public class DatabaseGUI extends GBFrame {
     }
 
     public DatabaseGUI() {
+        new CompareDialog(frame, db).setVisible(true);
         setVisible(true);
         setSize(400, 400);
         setTitle("Persons Database");
