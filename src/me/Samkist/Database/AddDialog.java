@@ -13,9 +13,7 @@ import java.util.ArrayList;
 
 public class AddDialog extends GBDialog {
 
-    ArrayList<Component> components = new ArrayList<>();
-
-    public AddDialog(JFrame jFrame, Class<? extends Person> type) {
+    public AddDialog(JFrame jFrame, Database db) {
         super(jFrame);
 
     }

@@ -14,8 +14,6 @@ public abstract class Student extends Person {
         thisid = id++;
     }
 
-    public abstract String print();
-
     public int getID() {
         return thisid;
     }

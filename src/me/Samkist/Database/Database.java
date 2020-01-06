@@ -4,32 +4,30 @@
  */
 package me.Samkist.Database;
 
+import BreezySwing.GBDialog;
 import me.Samkist.Database.meta.Graduate;
 import me.Samkist.Database.meta.Person;
 import me.Samkist.Database.meta.Student;
 import me.Samkist.Database.meta.Undergraduate;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Optional;
 
 public class Database {
 
     private ArrayList<Person> persons = new ArrayList<>();
-
-    public void addPerson(Person p) {
+    private DatabaseGUI gui;
+    public void addPerson(Person p, GBDialog dialog) {
         persons.add(p);
+        if(persons.size() >= 10) {
+            gui.disableAddPerson();
+            dialog.setVisible(false);
+        }
     }
 
-    public static void main(String[] args) {
-        Database db = new Database();
-    }
-
-    public Database() {
-        Undergraduate ungrad = new Undergraduate("stinky", null, Grade.SOPHOMORE);
-        persons.add(ungrad);
-        Graduate grad = new Graduate("poo", "Oop");
-        persons.add(grad);
-        getStudents().forEach(o -> System.out.println(o.print()));
+    public Database(DatabaseGUI gui) {
+        this.gui = gui;
     }
 
     public ArrayList<Person> getPersons() {
@@ -45,8 +43,8 @@ public class Database {
         return list;
     }
 
-    public ArrayList<Student> getGraduates() {
-        ArrayList<Student> list = new ArrayList<>();
+    public ArrayList<Graduate> getGraduates() {
+        ArrayList<Graduate> list = new ArrayList<>();
         persons.forEach(person -> {
             if(person instanceof Graduate)
                 list.add((Graduate) person);
@@ -54,8 +52,8 @@ public class Database {
         return list;
     }
 
-    public ArrayList<Student> getUndergraduates() {
-        ArrayList<Student> list = new ArrayList<>();
+    public ArrayList<Undergraduate> getUndergraduates() {
+        ArrayList<Undergraduate> list = new ArrayList<>();
         persons.forEach(person -> {
             if(person instanceof Undergraduate)
                 list.add((Undergraduate) person);

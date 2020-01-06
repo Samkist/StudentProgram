@@ -22,7 +22,7 @@ public class Graduate extends Student implements Majorable {
     }
 
     @Override
-    public String print() {
+    public String toString() {
         return "Name: " + getName() + "\n"
                 + "Major: " + getMajor();
     }

@@ -29,7 +29,7 @@ public class Undergraduate extends Student implements Majorable {
     }
 
     @Override
-    public String print() {
+    public String toString() {
         return "Name: " + getName() + "\n"
                 + "Major: " + getMajor() + "\n"
                 + "Grade: " + getLevel().getDescription();
