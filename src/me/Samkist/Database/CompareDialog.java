@@ -28,6 +28,9 @@ public class CompareDialog extends GBDialog {
             model.addElement(p.getName());
         });
         peopleDetails.setEditable(false);
+        setSize(400, 400);
+        setTitle("Compare");
+        setVisible(true);
     }
 
     public void listItemSelected(JList<String> list) {
@@ -56,8 +59,10 @@ public class CompareDialog extends GBDialog {
             } else if(person instanceof Graduate && p instanceof Graduate) {
                 Graduate gSelected = (Graduate) person;
                 Graduate gIterated = (Graduate) p;
+                if(gSelected.equals(gIterated))
                 builder.append(gIterated.toString()).append("\n");
             }
         });
+        peopleDetails.setText(builder.toString());
     }
 }

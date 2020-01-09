@@ -16,6 +16,7 @@ public class DatabaseGUI extends GBFrame {
     private JButton printUndergraduates = addButton("Print Undergraduates", 2, 0, 1, 1);
     private JButton printGraduates = addButton("Print Graduate Students", 3, 0, 1, 1);
     private JButton addPerson = addButton("Add Person", 4, 0, 1, 1);
+    private JButton comparePersons = addButton("Compare Persons", 5, 0, 1 ,1);
     private Database db = new Database(this);
 
     public static void main(String[] args) {
@@ -50,6 +51,10 @@ public class DatabaseGUI extends GBFrame {
 
         if(jButton.equals(printUndergraduates)) {
             new PrintDialog(frame, PrintType.UNDERGRADUATE, db);
+        }
+
+        if(jButton.equals(comparePersons)) {
+            new CompareDialog(frame, db);
         }
     }
 

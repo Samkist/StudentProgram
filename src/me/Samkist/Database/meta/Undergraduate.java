@@ -4,22 +4,23 @@
  */
 package me.Samkist.Database.meta;
 
-import com.sun.istack.internal.Nullable;
 import me.Samkist.Database.Grade;
 
 public class Undergraduate extends Student implements Majorable {
 
     private String major;
     private Grade level;
+    private int id;
 
-    public Undergraduate(String name, @Nullable String major, Grade level) {
-        super(name);
+    public Undergraduate(String name, String major, Grade level, int ID) {
+        super(name, ID);
         if(major != null) {
             this.major = major;
         } else {
             this.major = "Undecided";
         }
         this.level = level;
+        id = ID;
     }
 
 
@@ -32,6 +33,7 @@ public class Undergraduate extends Student implements Majorable {
     public String toString() {
         return "Name: " + getName() + "\n"
                 + "Major: " + getMajor() + "\n"
+                + "ID: " + getID() + "\n"
                 + "Grade: " + getLevel().getDescription();
     }
 
@@ -40,6 +42,6 @@ public class Undergraduate extends Student implements Majorable {
     }
 
     public boolean equals(Undergraduate ug) {
-        return ug.getLevel() == getLevel() && ug.getMajor().equalsIgnoreCase(getMajor());
+        return ug.getLevel() == getLevel() || ug.getMajor().equalsIgnoreCase(getMajor());
     }
 }

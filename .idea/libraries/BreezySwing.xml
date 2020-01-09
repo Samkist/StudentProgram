@@ -2,6 +2,7 @@
   <library name="BreezySwing">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../BreezySwing.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/BreezySwing.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

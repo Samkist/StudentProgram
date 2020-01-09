@@ -4,17 +4,17 @@
  */
 package me.Samkist.Database.meta;
 
-import com.sun.istack.internal.NotNull;
-import com.sun.istack.internal.Nullable;
-
 public class Graduate extends Student implements Majorable {
 
     private String major;
+    private int id;
 
-    public Graduate(String name, @NotNull String major) {
-        super(name);
+    public Graduate(String name, String major, int ID) {
+        super(name, ID);
         this.major = major;
+        id = ID;
     }
+
 
     @Override
     public String getMajor() {
@@ -24,7 +24,12 @@ public class Graduate extends Student implements Majorable {
     @Override
     public String toString() {
         return "Name: " + getName() + "\n"
-                + "Major: " + getMajor();
+                + "Major: " + getMajor() + "\n"
+                + "ID: " + getId();
+    }
+
+    public int getId() {
+        return id;
     }
 
     public boolean equals(Graduate g) {

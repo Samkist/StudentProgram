@@ -16,6 +16,7 @@ import java.util.Optional;
 
 public class Database {
 
+    private int id = 0;
     private ArrayList<Person> persons = new ArrayList<>();
     private DatabaseGUI gui;
     public void addPerson(Person p, GBDialog dialog) {
@@ -24,6 +25,11 @@ public class Database {
             gui.disableAddPerson();
             dialog.setVisible(false);
         }
+        id++;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public Database(DatabaseGUI gui) {

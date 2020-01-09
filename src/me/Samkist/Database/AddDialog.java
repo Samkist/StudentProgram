@@ -64,17 +64,17 @@ public class AddDialog extends GBDialog {
                     }
 
                     case 1 : {
-                        p = new Student(nameField.getText());
+                        p = new Student(nameField.getText(), db.getId());
                         break;
                     }
                     
                     case 2 : {
-                        p = new Graduate(nameField.getText(), majorField.getText());
+                        p = new Graduate(nameField.getText(), majorField.getText(), db.getId());
                         break;
                     }
 
                     case 3 : {
-                        p = new Undergraduate(nameField.getText(), majorField.getText(), Grade.FRESHMAN.getByValue(level.getItemAt(level.getSelectedIndex())));
+                        p = new Undergraduate(nameField.getText(), majorField.getText(), Grade.FRESHMAN.getByValue(level.getItemAt(level.getSelectedIndex())), db.getId());
                         break;
                     }
 
