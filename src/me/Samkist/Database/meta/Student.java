@@ -4,7 +4,7 @@
  */
 package me.Samkist.Database.meta;
 
-public abstract class Student extends Person {
+public class Student extends Person {
 
     private static int id = 0;
     private int thisid;

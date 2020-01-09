@@ -17,7 +17,7 @@ public class CompareDialog extends GBDialog {
 
     private Database db;
 
-    private JList<java.lang.String> peopleList = addList(1,1,1,1);
+    private JList<String> peopleList = addList(1,1,1,1);
     private JTextArea peopleDetails = addTextArea("",1,2,1,1);
 
     public CompareDialog(JFrame jFrame, Database db) {

@@ -15,4 +15,16 @@ public enum Grade {
     public String getDescription() {
         return description;
     }
+
+    public Grade getByValue(String s) {
+        if(s.equalsIgnoreCase("freshman"))
+            return FRESHMAN;
+        if(s.equalsIgnoreCase("sophomore"))
+            return SOPHOMORE;
+        if(s.equalsIgnoreCase("junior"))
+            return JUNIOR;
+        if(s.equalsIgnoreCase("senior"))
+            return SENIOR;
+        throw new IllegalArgumentException("invalid argument");
+    }
 }

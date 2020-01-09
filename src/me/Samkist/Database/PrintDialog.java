@@ -10,11 +10,11 @@ public class PrintDialog extends GBDialog {
 
     public PrintDialog(JFrame jFrame, PrintType printType, Database db) {
         super(jFrame);
-        setVisible(true);
         setSize(400, 400);
         setTitle("Print " + printType.getDescription());
         outputField.setEditable(false);
         print(printType, db);
+        setVisible(true);
     }
 
     public void print(PrintType printType, Database db) {
